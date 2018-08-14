@@ -13,6 +13,7 @@ services:
   
   mongo_dashboard:
     image: mongo
+    command: mongod --master
     container_name: mongo_dashboard
 #    ports:  # for demo/debug purpose only
 #       - 27018:27017

@@ -5,18 +5,27 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
-	
-	<h:form>
-		<p:outputPanel id="menuPanel" layout="block">
-				<p:menu autoSubmenuDisplay="true" style="width:213px;height:483px;border:none;font-size:small;padding:0px;"
-					ajax="false" type="sliding" backLabel="#{msg['menu.back']}">
-					<p:submenu label="Pages" icon="ui-icon ui-icon-refresh">
-						<p:menuitem value="Account Details"
-							url="#{dashboardView.baseUrl}/accountDetails.xhtml" />					
-					</p:submenu>
-				</p:menu>
-		</p:outputPanel>
-	</h:form>
+
+	<h:head>
+		<title>Login</title>
+		<h:outputStylesheet name="/css/main.css" />
+	</h:head>
+
+	<form action="#{dashboardView.baseUrl}/login.xhtml" method="post"
+		style="height: 4px;">
+		<input type="hidden" name="username" value="#{dashboardView.username}"
+			id="username" /> 
+		<input type="hidden" name="password"
+			value="#{dashboardView.password}" id="password" /> 
+		<input type="submit" class="submitLink" />
+	</form>
+
+	<form action="http://localhost:9090/login.xhtml" method="post"
+		style="height: 4px;">
+		<input type="hidden" name="username" value="user" id="username" /> <input
+			type="hidden" name="password" value="user" id="password" /> <input
+			type="submit" class="submitLink" value="submit2" />
+	</form>
 </ui:composition>
 
 

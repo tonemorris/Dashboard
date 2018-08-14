@@ -15,24 +15,24 @@
 							style="color: #0560a5">
 							<f:convertDateTime dateStyle="full" timeZone="EST" type="date" />
 						</h:outputText>
-						
+
 						<p:spacer width="5" />
 						<h:outputText value="|" style="color: #0560a5" />
 						<p:spacer width="5" />
 						<h:outputText value="Welcome" style="color: #0560a5" />
 						<p:spacer width="5" />
-						<h:outputText value="Tony Morris" style="color: #0560a5" />
+						<h:outputText value="#{request.remoteUser}" style="color: #0560a5" />
 						<p:spacer width="5" />
-						
+
 						<p:menuButton value="">
 							<p:menuitem value="Logout" style="color: #0560a5" />
-							<p:menuitem value="Home" style="color: #0560a5" />
+							<p:menuitem value="Home" style="color: #0560a5"  />
 						</p:menuButton>
 					</f:facet>
 					<f:facet name="left">
 						<p:menubar style="background-color: #e2e8ee;">
-							<p:submenu label="My Cosmo" >
-								<p:submenu label="New" >
+							<p:submenu label="My Cosmo">
+								<p:submenu label="New">
 									<p:menuitem value="Project" url="#" />
 									<p:menuitem value="Other" url="#" />
 								</p:submenu>
@@ -41,56 +41,56 @@
 								<p:menuitem value="Quit" url="#" />
 							</p:submenu>
 
-							<p:submenu label="Content" >
+							<p:submenu label="Content">
 								<p:menuitem value="Undo" url="#"
 									icon="ui-icon-arrowreturnthick-1-w" />
 								<p:menuitem value="Redo" url="#"
 									icon="ui-icon-arrowreturnthick-1-e" />
 							</p:submenu>
 
-							<p:submenu label="Source" >
+							<p:submenu label="Source">
 								<p:menuitem value="Contents" url="#" />
-								<p:submenu label="Search" >
+								<p:submenu label="Search">
 									<p:submenu label="Text">
 										<p:menuitem value="Workspace" url="#" />
 									</p:submenu>
 									<p:menuitem value="File" url="#" />
 								</p:submenu>
 							</p:submenu>
-							
-							<p:submenu label="Reporting" >
+
+							<p:submenu label="Reporting">
 								<p:menuitem value="Contents" url="#" />
-								<p:submenu label="Search" >
+								<p:submenu label="Search">
 									<p:submenu label="Text">
 										<p:menuitem value="Workspace" url="#" />
 									</p:submenu>
 									<p:menuitem value="File" url="#" />
 								</p:submenu>
 							</p:submenu>
-							
-							<p:submenu label="MatchMaker" >
+
+							<p:submenu label="MatchMaker">
 								<p:menuitem value="Contents" url="#" />
-								<p:submenu label="Search" >
+								<p:submenu label="Search">
 									<p:submenu label="Text">
 										<p:menuitem value="Workspace" url="#" />
 									</p:submenu>
 									<p:menuitem value="File" url="#" />
 								</p:submenu>
 							</p:submenu>
-							
-							<p:submenu label="DEC" >
+
+							<p:submenu label="DEC">
 								<p:menuitem value="Contents" url="#" />
-								<p:submenu label="Search" >
+								<p:submenu label="Search">
 									<p:submenu label="Text">
 										<p:menuitem value="Workspace" url="#" />
 									</p:submenu>
 									<p:menuitem value="File" url="#" />
 								</p:submenu>
 							</p:submenu>
-							
-							<p:submenu label="Admin" >
+
+							<p:submenu label="Admin">
 								<p:menuitem value="Contents" url="#" />
-								<p:submenu label="Search" >
+								<p:submenu label="Search">
 									<p:submenu label="Text">
 										<p:menuitem value="Workspace" url="#" />
 									</p:submenu>
@@ -107,6 +107,9 @@
 					<p:spacer width="50" height="75" />
 					<h:graphicImage name="logo.jpg" />
 					<p:spacer width="10" />
+					<p:breadCrumb>
+						<p:menuitem value="Categories" url="#" />
+					</p:breadCrumb>
 				</h:panelGroup>
 
 			</p:layoutUnit>

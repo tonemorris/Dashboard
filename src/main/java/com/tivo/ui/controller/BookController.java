@@ -36,7 +36,7 @@ public class BookController {
 	 */
 	@RequestMapping("/book/{name}")
 	public List<Book> findByName(@PathVariable String name) {
-		return null;
+		return bookService.findByName(name);
 	}
 
 }

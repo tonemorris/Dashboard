@@ -3,11 +3,53 @@ spring:
 ---
 spring:
   profiles: default
+  
+  application:
+    name: dashboard
 server:
-  context-path: /dashboard
   port: 9090
   
-logging:
-  file: app.log
+
   
-baseUrl: http://localhost:8088/account
+baseUrl: http://localhost:8089
+localBaseUrl: http://localhost:9090/error
+
+welcome.page: index.xhtml
+
+urlMap.key1: http://localhost:8089
+urlMap.key2: http://google:8777
+
+spring.h2.console.enabled: true
+spring.h2.console.path: /h2-console
+
+spring.datasource.url: jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+spring.datasource.driverClassName: org.h2.Driver
+spring.datasource.username: sa
+spring.datasource.password:
+
+spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto: update
+
+
+# ==============================================================
+# = Spring Security / Queries for AuthenticationManagerBuilder  
+# ==============================================================
+spring.queries.users-query: select username,password, enabled from users where username=?
+spring.queries.roles-query: select b.username, a.role from user_roles a, users b where b.username=? and a.userid=b.userid
+
+
+ 
+
+hystrix:
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 12000
+            
+---
+spring:
+  profiles: dev
